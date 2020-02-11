@@ -33,11 +33,15 @@ public class GameHud : MonoBehaviour
         {
             if (updateStart)
             {
+                THealth.text = Mathf.RoundToInt(_prop.curHealth) + " / " +Mathf.RoundToInt(_prop.maxHealth);
+            }
+            else
+            {
+                _prop = _GMode.Selected.GetComponent<Properties>();
+                TName.text = _prop.Name;
+                THealth.text = _prop.curHealth + " / " + _prop.maxHealth;
 
-                TName.text = _GMode.Selected.GetComponent<Properties>().Name;
-                THealth.text = _GMode.Selected.GetComponent<Properties>().curHealth + "/" + _GMode.Selected.GetComponent<Properties>().maxHealth;
-
-                switch (_GMode.Selected.GetComponent<Properties>().Type)
+                switch (_prop.Type)
                 {
                     case TypeBuildings.Farm:
                         FarmPanel.SetActive(true);
@@ -52,10 +56,7 @@ public class GameHud : MonoBehaviour
                     default:
                         break;
                 }
-            }
-            else
-            {
-                _prop = _GMode.Selected.GetComponent<Properties>();
+
                 DescriptionPanel.SetActive(true);
                 updateStart = true;
             }

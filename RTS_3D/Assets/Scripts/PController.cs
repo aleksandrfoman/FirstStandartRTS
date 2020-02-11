@@ -8,6 +8,7 @@ public class PController : MonoBehaviour
     public int indexShop = -1;
 
     private GMode GMode = null;
+    private GameHud GHUD = null;
 
     private Camera _camera = null;
 
@@ -19,6 +20,7 @@ public class PController : MonoBehaviour
     {
         GMode = GetComponent<GMode>();
         _camera = Camera.main;
+        GHUD = GetComponent<GameHud>();
     }
     private void Update()
     {
@@ -54,7 +56,7 @@ public class PController : MonoBehaviour
         }
         else
         {
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButton(0))//Выбор зданий
             {
                 _ray = _camera.ScreenPointToRay(Input.mousePosition);
                 if (Physics.Raycast(_ray, out _hit))
@@ -62,6 +64,7 @@ public class PController : MonoBehaviour
                     if (_hit.collider.tag == "Building")
                     {
                         GMode.Selected = _hit.collider.gameObject;
+                        GHUD.updateStart = false;
                     }
                 }
             }
