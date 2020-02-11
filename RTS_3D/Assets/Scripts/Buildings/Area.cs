@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Area : MonoBehaviour
 {
-    public bool status = false;
+    public bool Status = false;
     public bool Enable = false;
 
     public GameObject GObject = null;

@@ -35,13 +35,13 @@ public class PController : MonoBehaviour
                         if (_hit.collider.tag == "Area")
                         {
                             GMode.Gold -= GMode.Shop[indexShop].Cost;
-                            _hit.collider.GetComponent<Area>().status = true;
+                            _hit.collider.GetComponent<Area>().Status = true;
                             _hit.collider.GetComponent<Area>().Enable = false;
-                            _hit.collider.GetComponent<Area>().GObject = Instantiate(GMode.Shop[indexShop].GObject, new Vector3(_hit.transform.position.x, 0f, _hit.transform.position.z), Quaternion.identity);
+                            _hit.collider.GetComponent<Area>().GObject = Instantiate(GMode.Shop[indexShop].GObject, new Vector3(_hit.transform.position.x, 1f, _hit.transform.position.z), Quaternion.identity);
                             indexShop = -1;
                             foreach (Area _tmp in GMode.Areas)
                             {
-                                if (!_tmp.status)
+                                if (!_tmp.Status)
                                 {
                                     _tmp.Enable = false;
                                 }
@@ -75,7 +75,7 @@ public class PController : MonoBehaviour
             indexShop = _index;
             foreach (Area _tmp in GMode.Areas)
             {
-                if (!_tmp.status)
+                if (!_tmp.Status)
                     _tmp.enabled = true;
             }
             startBay = true;
