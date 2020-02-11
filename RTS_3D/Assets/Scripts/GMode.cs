@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class GMode : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int Gold = 0;
+    public int maxEats = 0;
+    public int curEats = 0;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public GameObject Selected = null;
+
+    public List<Building> Shop = new List<Building>();      //Магазин зданий
+    public List<Area> Areas = new List<Area>();             //Области для строительства
 }
