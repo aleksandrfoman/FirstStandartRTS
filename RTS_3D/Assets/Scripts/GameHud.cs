@@ -19,11 +19,12 @@ public class GameHud : MonoBehaviour
 
 
     private Properties _prop = null;
-
+    private UnitQueu _unitQueu = null;
     private GMode _GMode = null;
 
     private void Start()
     {
+        _unitQueu = GetComponent<UnitQueu>();
         _GMode = GetComponent<GMode>();
     }
 
@@ -48,6 +49,8 @@ public class GameHud : MonoBehaviour
                         TavernPanel.SetActive(false);
                         break;
                     case TypeBuildings.Tavern:
+                        _unitQueu.curTavern = _GMode.Selected.GetComponent<Tavern>();
+                        _unitQueu.updateUI = true;
                         TavernPanel.SetActive(true);
                         FarmPanel.SetActive(false);
                         break;
