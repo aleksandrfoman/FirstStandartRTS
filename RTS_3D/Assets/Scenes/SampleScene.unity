@@ -1394,14 +1394,13 @@ MonoBehaviour:
   curEats: 1
   Selected: {fileID: 0}
   Shop:
-  - Name: Farm
+  - Name: "\u0424\u0435\u0440\u043C\u0430"
     Cost: 25
-    GObject: {fileID: 8836737876034863575, guid: 1e616f0e1460e49438999499d24b755a,
+    GObject: {fileID: 145322074529431877, guid: 748b060a9495469468d9137097cdad03,
       type: 3}
-  - Name: Tavern
+  - Name: "\u0422\u0430\u0432\u0435\u0440\u043D\u0430"
     Cost: 50
-    GObject: {fileID: 3868072718569291847, guid: 3b9da0ea9fe68c94c9831edcfa62a980,
-      type: 3}
+    GObject: {fileID: 24330735631177617, guid: 102404eb9f3428947b46c21956cb3907, type: 3}
   Areas: []
 --- !u!114 &601584107
 MonoBehaviour:

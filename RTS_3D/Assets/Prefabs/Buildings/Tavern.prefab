@@ -1,18 +1,34 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &757184635366023016
+--- !u!114 &5640255441302143146
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 145322074529431877}
+  m_GameObject: {fileID: 24330735631177617}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5b7d12b7d106204eb3fedbdf4863b08, type: 3}
+  m_Script: {fileID: 11500000, guid: 940e22668960fd54fb5685d736bdba2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &4943920284076409859
+  Status: 0
+  maxQueue: 3
+  maxTime: 5
+  curTime: 2
+  Units:
+  - Name: "\u041F\u0441\u0438\u043D\u0430"
+    createTime: 3
+    Cost: 10
+    Avatar: {fileID: 21300000, guid: 648b67a2c73a8324c8d44da3ff8d392b, type: 3}
+    GObject: {fileID: 0}
+  - Name: "\u0421\u043B\u0430\u0440\u043A"
+    createTime: 5
+    Cost: 15
+    Avatar: {fileID: 21300000, guid: 82a9c2a3f10416143bfda038213e467a, type: 3}
+    GObject: {fileID: 0}
+  _unityQueue: 
+--- !u!1001 &5102134489082696407
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -22,12 +38,7 @@ PrefabInstance:
     - target: {fileID: 5086847552416941382, guid: 28dc88b69127b1f4980ee64d48aa44d3,
         type: 3}
       propertyPath: m_Name
-      value: Farm
-      objectReference: {fileID: 0}
-    - target: {fileID: 5086847552416941382, guid: 28dc88b69127b1f4980ee64d48aa44d3,
-        type: 3}
-      propertyPath: m_TagString
-      value: Building
+      value: Tavern
       objectReference: {fileID: 0}
     - target: {fileID: 5086847552416941378, guid: 28dc88b69127b1f4980ee64d48aa44d3,
         type: 3}
@@ -42,7 +53,7 @@ PrefabInstance:
     - target: {fileID: 5086847552416941378, guid: 28dc88b69127b1f4980ee64d48aa44d3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -2.09
       objectReference: {fileID: 0}
     - target: {fileID: 5086847552416941378, guid: 28dc88b69127b1f4980ee64d48aa44d3,
         type: 3}
@@ -88,7 +99,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: f459b4f1082adb8468989494c3ff5a11, type: 2}
+      objectReference: {fileID: 2100000, guid: 00eedc86edad29246a95cd71b397f24f, type: 2}
+    - target: {fileID: 5086847552416941377, guid: 28dc88b69127b1f4980ee64d48aa44d3,
+        type: 3}
+      propertyPath: curTime
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5086847552416941377, guid: 28dc88b69127b1f4980ee64d48aa44d3,
         type: 3}
       propertyPath: TimeCreated
@@ -96,29 +112,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5086847552416941376, guid: 28dc88b69127b1f4980ee64d48aa44d3,
         type: 3}
-      propertyPath: maxHealth
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 5086847552416941376, guid: 28dc88b69127b1f4980ee64d48aa44d3,
-        type: 3}
-      propertyPath: curHealth
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 5086847552416941376, guid: 28dc88b69127b1f4980ee64d48aa44d3,
-        type: 3}
       propertyPath: Type
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5086847552416941376, guid: 28dc88b69127b1f4980ee64d48aa44d3,
         type: 3}
       propertyPath: Name
-      value: "\u0424\u0435\u0440\u043C\u0430"
+      value: "\u0422\u0430\u0432\u0435\u0440\u043D\u0430"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5086847552416941376, guid: 28dc88b69127b1f4980ee64d48aa44d3,
+        type: 3}
+      propertyPath: curHealth
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28dc88b69127b1f4980ee64d48aa44d3, type: 3}
---- !u!1 &145322074529431877 stripped
+--- !u!1 &24330735631177617 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5086847552416941382, guid: 28dc88b69127b1f4980ee64d48aa44d3,
     type: 3}
-  m_PrefabInstance: {fileID: 4943920284076409859}
+  m_PrefabInstance: {fileID: 5102134489082696407}
   m_PrefabAsset: {fileID: 0}
