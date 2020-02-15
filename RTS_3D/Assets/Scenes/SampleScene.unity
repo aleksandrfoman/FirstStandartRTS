@@ -1331,6 +1331,7 @@ GameObject:
   - component: {fileID: 601584105}
   - component: {fileID: 601584107}
   - component: {fileID: 601584108}
+  - component: {fileID: 601584109}
   m_Layer: 0
   m_Name: GameWorld
   m_TagString: GameWorld
@@ -1416,6 +1417,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startBay: 0
   indexShop: -1
+  gameUnits: []
+  selectGroup: []
 --- !u!114 &601584108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1435,6 +1438,21 @@ MonoBehaviour:
   - {fileID: 24150214}
   updateUI: 0
   curTavern: {fileID: 0}
+--- !u!114 &601584109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601584103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c69894b2b885064ba65638854bc3cc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Selected: 0
+  FindUnit: 0
+  BoxSelect: {fileID: 2800000, guid: 65067c4feb454ab4fae14e50908be31e, type: 3}
 --- !u!1 &610582118
 GameObject:
   m_ObjectHideFlags: 0
