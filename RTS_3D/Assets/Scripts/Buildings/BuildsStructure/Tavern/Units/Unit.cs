@@ -14,28 +14,24 @@ public class Unit : MonoBehaviour
 
     private NavMeshAgent p_agent = null;
 
-    private Camera p_camera;
-    private Ray _ray;
-    private RaycastHit _hit;
+   
 
 
     private void Start()
     {
-        p_camera = Camera.main;
+       
         p_agent = GetComponent<NavMeshAgent>();
         p_agent.speed = Speed;
     }
 
     private void Update()
     {
-        if (Input.GetMouseButton(1))
-        {
-            _ray = p_camera.ScreenPointToRay(Input.mousePosition);
-            if(Physics.Raycast(_ray,out _hit))
-            {
-                p_agent.SetDestination(_hit.point);
-            }
-        }
+
+    }
+
+    public void AddPath(Vector3 _point)
+    {
+        p_agent.SetDestination(_point);
     }
 
 }

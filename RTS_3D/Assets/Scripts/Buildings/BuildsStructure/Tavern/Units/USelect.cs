@@ -32,6 +32,7 @@ public class USelect : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             _startPoint = Input.mousePosition;
+            _pcontroller.selectGroup.Clear();
             Selected = true;
         }
         if(Selected)
