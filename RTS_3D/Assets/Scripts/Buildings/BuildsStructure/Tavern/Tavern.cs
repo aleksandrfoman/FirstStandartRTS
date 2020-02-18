@@ -5,17 +5,17 @@ using UnityEngine;
 public class Tavern : MonoBehaviour
 {
     public bool Status = false;
-
+    public bool setTargetPoint = false;
+    [Space]
     public int maxQueue = 0;
-
     public float maxTime = 0f;
     public float curTime = 0f;
 
-
+    [Header("Shop")]
     public List<UnitData> Units = new List<UnitData>();
-
     public List<int> _unityQueue = new List<int>();
-
+    [Header("Reference")]
+    public Transform targetPoint = null;
     private void Update()
     {
         if (Status)
@@ -26,7 +26,8 @@ public class Tavern : MonoBehaviour
                 if (curTime >= maxTime)
                 {
                     curTime = 0f;
-                    Debug.Log("Spawn Unit" + Units[_unityQueue[0]]);
+                    var temp = Instantiate(Units[_unityQueue[0]].GObject, transform.position, Quaternion.identity);
+                    temp.GetComponent<Unit>().AddPath(targetPoint.position);
                     _unityQueue.RemoveAt(0);
                   
                 }

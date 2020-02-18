@@ -5,17 +5,26 @@ using UnityEngine.UI;
 
 public class UnitQueu : MonoBehaviour
 {
+    public bool updateUI = false;
+    [Header("UI")]
     public Image ProgressBar = null;
     public List<Image> Icons = new List<Image>();
 
-    public bool updateUI = false;
+    [Header("Reference")]
     public Tavern curTavern = null;
+
+
     private GMode _GMode = null;
+
+    private Ray p_ray;
+    private RaycastHit p_hit;
+    private Camera p_camera;
 
 
     private void Start()
     {
         _GMode = GetComponent<GMode>();
+        p_camera = Camera.main;
     }
     private void Update()
     {
@@ -46,7 +55,25 @@ public class UnitQueu : MonoBehaviour
                     _tmp.gameObject.SetActive(false);
                 }
             }
-            
+            if (Input.GetKey(KeyCode.Y))
+            {
+                curTavern.setTargetPoint = true;
+            }
+            if (curTavern.setTargetPoint)
+            {
+                if (Input.GetMouseButton(1))
+                {
+                    p_ray = p_camera.ScreenPointToRay(Input.mousePosition);
+                    if(Physics.Raycast(p_ray,out p_hit))
+                    {
+                        if(p_hit.collider.tag == "Terrain")
+                        {
+                            curTavern.targetPoint.position = p_hit.point;
+                            curTavern.setTargetPoint = false;
+                        }
+                    }
+                }
+            }
         }
     }
     public void BuyUnit(int _index)

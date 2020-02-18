@@ -14,16 +14,17 @@ public class Unit : MonoBehaviour
 
     private NavMeshAgent p_agent = null;
 
-   
 
 
+    private void Awake()
+    {
+        p_agent = GetComponent<NavMeshAgent>();
+      
+    }
     private void Start()
     {
-       
-        p_agent = GetComponent<NavMeshAgent>();
         p_agent.speed = Speed;
     }
-
     private void Update()
     {
 
