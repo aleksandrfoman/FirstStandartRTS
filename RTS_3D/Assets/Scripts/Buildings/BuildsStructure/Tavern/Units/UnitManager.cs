@@ -27,25 +27,11 @@ public class UnitManager : MonoBehaviour
                
                 if (p_hit.collider.CompareTag("Terrain"))
                 {
-                    var pos = setFirstPosition(p_hit.point);
-                    var temp = (p_hit.point - pos).normalized;
-                    p_controller.selectGroup[0].GetComponent<Unit>().AddPath(pos);
-                    if (p_controller.selectGroup.Count > 1)
-                    {
-                        for (int i = 1;i<p_controller.selectGroup.Count;i++)
-                        {
-                            pos += temp * 2f;
-                            p_controller.selectGroup[i].GetComponent<Unit>().AddPath(pos);
-                        }
-                    }
+                    //p_controller.selectGroup.MoveToPoint(p_hit.point);
                 }
             }
         }
     }
 
-    private Vector3 setFirstPosition(Vector3 _point)
-    {
-
-        return _point + Vector3.Cross(Vector3.up, p_controller.selectGroup[0].transform.position - _point).normalized * (p_controller.selectGroup.Count / 2);
-    }
+   
 }
