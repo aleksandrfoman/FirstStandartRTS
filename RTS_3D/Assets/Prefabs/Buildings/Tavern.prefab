@@ -113,12 +113,14 @@ MonoBehaviour:
     createTime: 3
     Cost: 10
     Avatar: {fileID: 21300000, guid: 648b67a2c73a8324c8d44da3ff8d392b, type: 3}
-    GObject: {fileID: 0}
+    GObject: {fileID: 176601522788724857, guid: 631357bc617edee48a6dfb045dd77ede,
+      type: 3}
   - Name: "\u0421\u043B\u0430\u0440\u043A"
     createTime: 5
     Cost: 15
     Avatar: {fileID: 21300000, guid: 82a9c2a3f10416143bfda038213e467a, type: 3}
-    GObject: {fileID: 0}
+    GObject: {fileID: 176601522788724857, guid: 631357bc617edee48a6dfb045dd77ede,
+      type: 3}
   _unityQueue: 
   targetPoint: {fileID: 749763561}
 --- !u!1001 &5102134489082696407

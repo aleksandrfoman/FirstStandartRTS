@@ -16,7 +16,7 @@ public class PController : MonoBehaviour
     private RaycastHit _hit;
 
     public List<GameObject> gameUnits = new List<GameObject>();
-    public List<GameObject> selectGroup = new List<GameObject>();
+    public UnitSquad selectGroup = new UnitSquad();
 
     private void Start()
     {

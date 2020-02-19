@@ -19,7 +19,7 @@ public class UnitManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButton(1) && p_controller.selectGroup.Count > 0)
+        if (Input.GetMouseButton(1) && p_controller.selectGroup.count > 0)
         {
             p_ray = p_camera.ScreenPointToRay(Input.mousePosition);
             if(Physics.Raycast(p_ray, out p_hit))
@@ -27,7 +27,7 @@ public class UnitManager : MonoBehaviour
                
                 if (p_hit.collider.CompareTag("Terrain"))
                 {
-                    //p_controller.selectGroup.MoveToPoint(p_hit.point);
+                    p_controller.selectGroup.MoveToPoint(p_hit.point);
                 }
             }
         }

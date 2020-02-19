@@ -52,7 +52,7 @@ public class USelect : MonoBehaviour
                 pos.y = InvertY(pos.y);
                 if (s_rect.Contains(pos))
                 {
-                    _pcontroller.selectGroup.Add(tmp);
+                    _pcontroller.selectGroup.AddUnit(tmp);
                 }
             }
             FindUnit = false;

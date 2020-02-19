@@ -13,12 +13,13 @@ public class Unit : MonoBehaviour
     public float Speed = 0f;
 
     private NavMeshAgent p_agent = null;
-
+    private Animator p_animator;
 
 
     private void Awake()
     {
         p_agent = GetComponent<NavMeshAgent>();
+        p_animator = GetComponent<Animator>();
       
     }
     private void Start()
@@ -27,12 +28,23 @@ public class Unit : MonoBehaviour
     }
     private void Update()
     {
-
+        if (Vector3.Distance(transform.position, p_agent.destination) < 0.2f)
+        {
+            p_animator.SetBool("RUN", false);
+            p_animator.SetBool("IDLE", true);
+        }
+        else
+        {
+            p_animator.SetBool("RUN", true);
+            p_animator.SetBool("IDLE", false);
+        }
     }
 
     public void AddPath(Vector3 _point)
     {
         p_agent.SetDestination(_point);
+        p_animator.SetBool("RUN", true);
+        p_animator.SetBool("IDLE", false);
     }
 
 }
